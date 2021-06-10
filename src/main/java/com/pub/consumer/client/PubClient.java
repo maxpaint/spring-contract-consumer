@@ -17,12 +17,11 @@ public class PubClient {
     public boolean canClientOrderBear(ClientDto client) {
         CheckDto checkResult;
         try {
-            checkResult = new RestTemplate()
-                    .postForObject(baseUrl + "/clients/1/check", client, CheckDto.class);
+            checkResult = restTemplate.postForObject(baseUrl + "/clients/1/check", client, CheckDto.class);
         } catch (HttpClientErrorException clientErrorException) {
             checkResult = jsonToClass(clientErrorException.getResponseBodyAsString(), CheckDto.class);
         }
-        return checkResult.isAdult();
+        return checkResult.isAdult() && checkResult.isNotBlocked();
     }
 
 

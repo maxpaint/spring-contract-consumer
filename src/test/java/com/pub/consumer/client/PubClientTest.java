@@ -34,12 +34,12 @@ class PubClientTest {
     }
 
 
-    /*@Test
+    @Test
     public void should_give_me_a_beer_when_im_old_enough() {
         var adult = new ClientDto().setAge(21);
         boolean actualResult = pubClient.canClientOrderBear(adult);
         assertThat(actualResult).isEqualTo(true);
-    }*/
+    }
 
     @Test
     public void should_reject_a_beer_when_im_too_young() {
