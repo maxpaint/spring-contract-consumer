@@ -15,4 +15,8 @@ class CheckDto {
     public boolean blocked;
     public boolean debtor;
     public long debt;
+
+    public boolean isNotBlocked(){
+        return !isBlocked();
+    }
 }
