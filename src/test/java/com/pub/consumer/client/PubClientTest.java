@@ -15,10 +15,10 @@ import static org.assertj.core.api.AssertionsForInterfaceTypes.assertThat;
 
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.NONE)
 @AutoConfigureStubRunner(ids = {
-        "com.pub:provider"}, stubsMode = StubRunnerProperties.StubsMode.LOCAL)
+        "com.pub:producer"}, stubsMode = StubRunnerProperties.StubsMode.LOCAL)
 class PubClientTest {
 
-    @StubRunnerPort("provider")
+    @StubRunnerPort("producer")
     int producerPort;
 
     @Autowired
